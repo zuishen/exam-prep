@@ -21,4 +21,20 @@ public class Solutions121 {
         }
         return Math.max(maxProfit, 0);
     }
+
+    public int maxProfit1(int[] prices) {
+        if (prices == null || prices.length == 0) {
+            return 0;
+        }
+        int lowestPrice = Integer.MAX_VALUE;
+        int maxProfit = 0;
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] < lowestPrice) {
+                lowestPrice = prices[i];
+            } else {
+                maxProfit = Math.max(maxProfit, prices[i] - lowestPrice);
+            }
+        }
+        return maxProfit;
+    }
 }

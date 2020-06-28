@@ -14,12 +14,14 @@ public class Solutions121Test {
     @Test
     public void test1() {
         int[] prices = {7, 1, 5, 3, 6, 4};
-        System.out.println("test1: " + s121.maxProfit(prices));
+        System.out.println("test1 for s1: " + s121.maxProfit(prices));
+        System.out.println("test1 for s2: " + s121.maxProfit1(prices));
     }
 
     @Test
     public void test2() {
         int[] prices = {5, 4, 3, 2, 1};
-        System.out.println("test2: " + s121.maxProfit(prices));
+        System.out.println("test2 for s1: " + s121.maxProfit(prices));
+        System.out.println("test2 for s2: " + s121.maxProfit1(prices));
     }
 }
