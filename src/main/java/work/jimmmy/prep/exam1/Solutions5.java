@@ -44,6 +44,39 @@ public class Solutions5 {
         return result;
     }
 
+    public String longestPalindromeDp(String s) {
+        if (s == null || s.length() == 0 || s.length() == 1) {
+            return s;
+        }
+        boolean[][] result = new boolean[s.length()][s.length()];
+
+        String palindromeStr = "";
+
+        for (int i = 0; i < result.length; i++) {
+            for (int j = 0; j <= i; j++) {
+                if (j - i + 1 > palindromeStr.length()) {
+                    palindromeStr = s.substring(i, j + 1);
+                }
+                result[i][j] = true;
+            }
+        }
+
+        for (int l = 2; l <= s.length(); l++) {
+            for (int i = 0; i < s.length() - l + 1; i++) {
+                // result[i + 1][j - 1] && s.charAt(i) == s.charAt(j)
+                // j = i + l - 1
+                int j = i + l - 1;
+                if (result[i + 1][j - 1] && s.charAt(i) == s.charAt(j)) {
+                    if (l > palindromeStr.length()) {
+                        palindromeStr = s.substring(i, j + 1);
+                    }
+                    result[i][j] = true;
+                }
+            }
+        }
+        return palindromeStr;
+    }
+
     /**
      * 判断字符串是否是回文串
      *
@@ -85,6 +118,8 @@ public class Solutions5 {
             if (str.charAt(lp) != str.charAt(rp)) {
                 return lp + 1 < rp - 1 ? str.substring(lp + 1, rp) : str.substring(left, left + 1);
             }
+            lp--;
+            rp++;
         }
         return str.substring(lp + 1, rp);
     }

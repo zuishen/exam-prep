@@ -14,6 +14,13 @@ public class Solution5Test {
     @Test
     public void testBruteForce() {
         String input = "abcacbadf";
+        System.out.println(solutions5.longestPalindrome1(input));
+    }
+
+    @Test
+    public void test1() {
+        String input = "abcacbadf";
         System.out.println(solutions5.longestPalindrome(input));
+        System.out.println(solutions5.longestPalindromeDp(input));
     }
 }
