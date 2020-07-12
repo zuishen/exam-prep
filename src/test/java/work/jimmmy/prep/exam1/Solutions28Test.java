@@ -20,4 +20,14 @@ public class Solutions28Test {
         System.out.println(solutions28.strStr("abcdedf", "acdef"));
         System.out.println(solutions28.strStr("ac", "acd"));
     }
+
+    @Test
+    public void test2() {
+        System.out.println(solutions28.strStr2("c", "c"));
+        System.out.println(solutions28.strStr2("abcdeea", "dee"));
+        System.out.println(solutions28.strStr2("", "a"));
+        System.out.println(solutions28.strStr2("abc", ""));
+        System.out.println(solutions28.strStr2("abcdedf", "acdef"));
+        System.out.println(solutions28.strStr2("ac", "acd"));
+    }
 }
