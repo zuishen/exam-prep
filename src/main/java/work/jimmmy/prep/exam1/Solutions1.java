@@ -27,7 +27,7 @@ public class Solutions1 {
         return new int[] {-1, -1};
     }
 
-    // 双指针算法, nlogn
+    // 双指针算法, :wqnlogn
     public int[] twoSumWithTwoPointers(int[] nums, int target) {
         if (nums == null || nums.length < 2) {
             return new int[] {-1, -1};
